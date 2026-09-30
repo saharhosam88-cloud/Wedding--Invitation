@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerlos & Mariam | Wedding Invitation</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ivory: '#FAF8F5',
+                        cream: '#F4F0EA',
+                        warmBeige: '#EFEAE1',
+                        softGold: '#C5A880',
+                        lightGold: '#E6D7C3',
+                        champagne: '#DFD3C3',
+                        stoneDark: '#2C2A29',
+                        stoneMuted: '#6B6661'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        script: ['"Pinyon Script"', 'cursive'],
+                        sans: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@200;300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+    <!-- External Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-ivory text-stoneDark relative antialiased selection:bg-lightGold">
+
+    <!-- Background Music Player -->
+    <audio id="weddingAudio" loop preload="auto">
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-wedding-piano-112191.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Floating Music Button -->
+    <button id="musicToggleBtn" onclick="toggleMusic()" class="fixed bottom-6 left-6 z-50 bg-white/90 hover:bg-white text-softGold border border-softGold/40 p-3.5 rounded-full shadow-lg transition-all duration-500 flex items-center justify-center group" title="Play / Pause Background Song">
+        <i id="musicIcon" class="fas fa-music text-xs text-softGold"></i>
+        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-500 ease-out font-sans text-[11px] tracking-widest text-stoneMuted ml-0 group-hover:ml-2">
+            Khatwa Wara Khatwa 🎵
+        </span>
+    </button>
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 right-0 left-0 z-40 glass-soft border-b border-softGold/20 transition-all duration-300">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-serif text-2xl tracking-widest text-stoneDark hover:text-softGold transition-colors">
+                K <span class="font-script text-softGold text-3xl font-normal">&</span> M
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-[11px] tracking-[0.2em] font-light uppercase text-stoneMuted">
+                <a href="#welcome" class="hover:text-softGold transition-colors">Welcome</a>
+                <a href="#countdown" class="hover:text-softGold transition-colors">Countdown</a>
+                <a href="#photos" class="hover:text-softGold transition-colors">Photos</a>
+                <a href="#venues" class="hover:text-softGold transition-colors">Locations</a>
+                <a href="#rsvp" class="hover:text-softGold transition-colors">RSVP</a>
+            </div>
+            <a href="#rsvp" class="border border-softGold/50 text-stoneDark hover:bg-softGold hover:text-white px-5 py-2 rounded-full text-[10px] tracking-[0.2em] uppercase transition-all duration-300">
+                Confirm RSVP
+            </a>
+        </div>
+    </nav>
+
+    <!-- Welcome / Hero Section -->
+    <section id="welcome" class="min-h-screen flex items-center justify-center text-center px-4 pt-24 pb-16 relative">
+        <div class="max-w-2xl mx-auto space-y-8 fade-in">
+            <div class="inline-block px-4 py-1.5 border-t border-b border-softGold/30 text-[10px] tracking-[0.3em] uppercase text-softGold font-light">
+                Save The Date
+            </div>
+
+            <div class="space-y-3">
+                <h1 class="font-serif text-5xl sm:text-7xl lg:text-8xl font-normal tracking-wide text-stoneDark">
+                    Kerlos <span class="font-script text-softGold text-5xl sm:text-7xl font-normal block sm:inline my-2 sm:my-0">&</span> Mariam
+                </h1>
+            </div>
+
+            <p class="font-serif italic text-lg sm:text-2xl text-softGold tracking-wide font-light">
+                October 27, 2026
+            </p>
+
+            <div class="w-12 h-px bg-softGold/40 mx-auto my-6"></div>
+
+            <div class="space-y-4 max-w-xl mx-auto">
+                <h2 class="font-serif text-2xl sm:text-3xl text-stoneDark font-light">We are getting married!</h2>
+                <p class="text-stoneMuted text-xs sm:text-sm font-light leading-relaxed tracking-wide px-4">
+                    Together with our families, we joyfully invite you to celebrate our love as we begin our new journey together.
+                </p>
+            </div>
+
+            <div class="pt-12">
+                <a href="#countdown" class="inline-flex flex-col items-center text-softGold/60 hover:text-softGold transition-colors">
+                    <span class="text-[9px] tracking-[0.25em] uppercase mb-2">Scroll</span>
+                    <i class="fas fa-chevron-down text-[10px] animate-bounce"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section id="countdown" class="py-20 px-4 bg-cream/50 border-y border-softGold/20">
+        <div class="max-w-3xl mx-auto text-center">
+            <span class="text-[10px] tracking-[0.3em] uppercase text-softGold block mb-3 font-light">Counting The Moments</span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-light text-stoneDark mb-12">Until We Say "I Do"</h3>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-ivory p-6 rounded-2xl gold-subtle-border shadow-sm">
+                    <span id="days" class="block font-serif text-4xl sm:text-5xl font-light text-stoneDark">00</span>
+                    <span class="text-[9px] text-stoneMuted font-light tracking-[0.25em] uppercase mt-2 block">Days</span>
+                </div>
+                <div class="bg-ivory p-6 rounded-2xl gold-subtle-border shadow-sm">
+                    <span id="hours" class="block font-serif text-4xl sm:text-5xl font-light text-stoneDark">00</span>
+                    <span class="text-[9px] text-stoneMuted font-light tracking-[0.25em] uppercase mt-2 block">Hours</span>
+                </div>
+                <div class="bg-ivory p-6 rounded-2xl gold-subtle-border shadow-sm">
+                    <span id="minutes" class="block font-serif text-4xl sm:text-5xl font-light text-stoneDark">00</span>
+                    <span class="text-[9px] text-stoneMuted font-light tracking-[0.25em] uppercase mt-2 block">Minutes</span>
+                </div>
+                <div class="bg-ivory p-6 rounded-2xl gold-subtle-border shadow-sm">
+                    <span id="seconds" class="block font-serif text-4xl sm:text-5xl font-light text-stoneDark">00</span>
+                    <span class="text-[9px] text-stoneMuted font-light tracking-[0.25em] uppercase mt-2 block">Seconds</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photos Section -->
+    <section id="photos" class="py-24 px-4 max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="text-[10px] tracking-[0.3em] uppercase text-softGold block mb-2 font-light">Captured Moments</span>
+            <h2 class="font-serif text-3xl sm:text-4xl text-stoneDark font-light">Kerlos & Mariam</h2>
+            <div class="w-10 h-px bg-softGold/40 mx-auto mt-4"></div>
+            <p class="text-xs text-stoneMuted mt-4 font-light max-w-md mx-auto">
+                Click on any photo frame below to upload and customize with your own personal pictures!
+            </p>
+        </div>
+
+        <input type="file" id="photoUploader" accept="image/*" class="hidden" onchange="applyUploadedPhoto(event)">
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Frame 1 -->
+            <div class="group relative bg-cream/60 p-4 rounded-3xl gold-subtle-border shadow-sm transition-all duration-500 hover:shadow-md">
+                <div class="relative aspect-[3/4] rounded-2xl overflow-hidden bg-warmBeige flex items-center justify-center">
+                    <img id="photo1" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Kerlos & Mariam" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <button onclick="triggerUpload('photo1')" class="absolute inset-0 bg-stoneDark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white p-4 text-center">
+                        <i class="fas fa-camera text-xl mb-2 text-lightGold"></i>
+                        <span class="text-[10px] uppercase tracking-widest font-light">Change Photo</span>
+                    </button>
+                </div>
+                <p class="text-center font-serif italic text-stoneMuted text-sm mt-4">Together Hand in Hand</p>
+            </div>
+
+            <!-- Frame 2 -->
+            <div class="group relative bg-cream/60 p-4 rounded-3xl gold-subtle-border shadow-sm transition-all duration-500 hover:shadow-md md:-translate-y-4">
+                <div class="relative aspect-[3/4] rounded-2xl overflow-hidden bg-warmBeige flex items-center justify-center">
+                    <img id="photo2" src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80" alt="Kerlos & Mariam" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <button onclick="triggerUpload('photo2')" class="absolute inset-0 bg-stoneDark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white p-4 text-center">
+                        <i class="fas fa-camera text-xl mb-2 text-lightGold"></i>
+                        <span class="text-[10px] uppercase tracking-widest font-light">Change Photo</span>
+                    </button>
+                </div>
+                <p class="text-center font-serif italic text-stoneMuted text-sm mt-4">A Beginning of Forever</p>
+            </div>
+
+            <!-- Frame 3 -->
+            <div class="group relative bg-cream/60 p-4 rounded-3xl gold-subtle-border shadow-sm transition-all duration-500 hover:shadow-md">
+                <div class="relative aspect-[3/4] rounded-2xl overflow-hidden bg-warmBeige flex items-center justify-center">
+                    <img id="photo3" src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80" alt="Kerlos & Mariam" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <button onclick="triggerUpload('photo3')" class="absolute inset-0 bg-stoneDark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white p-4 text-center">
+                        <i class="fas fa-camera text-xl mb-2 text-lightGold"></i>
+                        <span class="text-[10px] uppercase tracking-widest font-light">Change Photo</span>
+                    </button>
+                </div>
+                <p class="text-center font-serif italic text-stoneMuted text-sm mt-4">Pure Joy & Love</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venues Section -->
+    <section id="venues" class="py-24 px-4 bg-cream/40 border-y border-softGold/20">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-[10px] tracking-[0.3em] uppercase text-softGold block mb-2 font-light">Details & Venues</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-stoneDark font-light">Where & When</h2>
+                <div class="w-10 h-px bg-softGold/40 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Venue 1: Church -->
+                <div class="bg-ivory p-8 sm:p-10 rounded-3xl gold-subtle-border shadow-sm flex flex-col justify-between text-center space-y-6">
+                    <div>
+                        <div class="w-12 h-12 rounded-full border border-softGold/30 flex items-center justify-center mx-auto mb-6 text-softGold">
+                            <i class="fas fa-church text-base"></i>
+                        </div>
+                        <span class="text-[10px] tracking-[0.25em] uppercase text-softGold font-light block mb-2">The Holy Ceremony</span>
+                        <h3 class="font-serif text-2xl text-stoneDark font-light">Church Ceremony</h3>
+                        
+                        <div class="my-6 space-y-2 text-xs text-stoneMuted font-light">
+                            <p class="font-serif text-lg text-stoneDark">5:00 PM</p>
+                            <p class="text-stoneDark font-medium">Virgin Mary Church - El Nozha</p>
+                            <p class="text-stoneMuted text-[11px]">كنيسة العذراء مريم بالنزهة</p>
+                        </div>
+                    </div>
+
+                    <a href="https://www.stmaryelnozha.com/contact-us" target="_blank" rel="noopener noreferrer" class="inline-block border border-softGold/40 text-stoneDark hover:bg-softGold hover:text-white py-3 px-6 rounded-full text-[10px] tracking-[0.2em] uppercase transition-all duration-300">
+                        Church Website
+                    </a>
+                </div>
+
+                <!-- Venue 2: Reception -->
+                <div class="bg-ivory p-8 sm:p-10 rounded-3xl gold-subtle-border shadow-sm flex flex-col justify-between text-center space-y-6">
+                    <div>
+                        <div class="w-12 h-12 rounded-full border border-softGold/30 flex items-center justify-center mx-auto mb-6 text-softGold">
+                            <i class="fas fa-glass-cheers text-base"></i>
+                        </div>
+                        <span class="text-[10px] tracking-[0.25em] uppercase text-softGold font-light block mb-2">The Celebration</span>
+                        <h3 class="font-serif text-2xl text-stoneDark font-light">Wedding Reception</h3>
+                        
+                        <div class="my-6 space-y-2 text-xs text-stoneMuted font-light">
+                            <p class="font-serif text-lg text-stoneDark">7:00 PM</p>
+                            <p class="text-stoneDark font-medium">The View</p>
+                            <p class="text-stoneMuted text-[11px]">قاعة ذا فيو</p>
+                        </div>
+                    </div>
+
+                    <a href="https://maps.app.goo.gl/w3T86bYa5binrXV79?g_st=aw" target="_blank" rel="noopener noreferrer" class="inline-block border border-softGold/40 text-stoneDark hover:bg-softGold hover:text-white py-3 px-6 rounded-full text-[10px] tracking-[0.2em] uppercase transition-all duration-300">
+                        Google Maps Location
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section id="rsvp" class="py-24 px-4 max-w-xl mx-auto">
+        <div class="bg-ivory p-8 sm:p-12 rounded-3xl gold-subtle-border shadow-sm text-center space-y-8">
+            <div>
+                <span class="text-[10px] tracking-[0.3em] uppercase text-softGold block mb-2 font-light">Kindly Respond</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-stoneDark font-light">RSVP</h2>
+                <div class="w-10 h-px bg-softGold/40 mx-auto mt-4"></div>
+                <p class="text-stoneMuted text-xs font-light mt-3">Please confirm your attendance with us</p>
+            </div>
+
+            <form id="rsvpForm" onsubmit="submitRSVP(event)" class="space-y-5 text-left">
+                <div>
+                    <label class="block text-[10px] uppercase tracking-[0.2em] text-stoneMuted mb-2">Full Name</label>
+                    <input type="text" id="guestName" required placeholder="Your full name" class="w-full px-4 py-3 rounded-xl bg-cream/40 border border-softGold/30 text-stoneDark text-xs focus:ring-1 focus:ring-softGold outline-none transition-all">
+                </div>
+
+                <div>
+                    <label class="block text-[10px] uppercase tracking-[0.2em] text-stoneMuted mb-2">Attendance</label>
+                    <select id="attendance" required class="w-full px-4 py-3 rounded-xl bg-cream/40 border border-softGold/30 text-stoneDark text-xs focus:ring-1 focus:ring-softGold outline-none transition-all">
+                        <option value="Attending">Joyfully Attending</option>
+                        <option value="Declining">Regretfully Decline</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-[10px] uppercase tracking-[0.2em] text-stoneMuted mb-2">Number of Guests</label>
+                    <select id="guestCount" class="w-full px-4 py-3 rounded-xl bg-cream/40 border border-softGold/30 text-stoneDark text-xs focus:ring-1 focus:ring-softGold outline-none transition-all">
+                        <option value="1">1 Person</option>
+                        <option value="2">2 Persons</option>
+                        <option value="3">3 Persons</option>
+                        <option value="4">4 Persons</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="w-full bg-stoneDark hover:bg-softGold text-ivory py-3.5 rounded-xl text-[10px] tracking-[0.25em] uppercase transition-all duration-300 mt-4">
+                    Send Confirmation
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="py-12 text-center text-stoneMuted border-t border-softGold/20 bg-cream/30">
+        <div class="space-y-3">
+            <h4 class="font-serif text-2xl text-stoneDark">Kerlos <span class="font-script text-softGold">&</span> Mariam</h4>
+            <p class="text-[10px] tracking-[0.2em] uppercase text-softGold">27.10.2026</p>
+            <p class="text-[10px] text-stoneMuted/70 font-light pt-4">Made with love for our special day</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed top-8 right-8 z-50 transform translate-y-[-100px] opacity-0 transition-all duration-500 bg-white border border-softGold/40 p-4 rounded-2xl shadow-xl flex items-center gap-3">
+        <i class="fas fa-check-circle text-softGold"></i>
+        <span id="toastMsg" class="text-xs text-stoneDark font-light">RSVP Received! Thank you.</span>
+    </div>
+
+    <!-- External Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

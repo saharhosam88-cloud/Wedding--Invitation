@@ -1,0 +1,38 @@
+/* Custom Global Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #FAF8F5;
+    color: #2C2A29;
+    overflow-x: hidden;
+    letter-spacing: 0.02em;
+}
+
+.gold-subtle-border {
+    border: 1px solid rgba(197, 168, 128, 0.35);
+}
+
+.glass-soft {
+    background: rgba(250, 248, 245, 0.85);
+    backdrop-filter: blur(12px);
+}
+
+.fade-in {
+    animation: fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(12px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.text-gold-subtle {
+    background: linear-gradient(135deg, #A88B60 0%, #C5A880 50%, #94784F 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
